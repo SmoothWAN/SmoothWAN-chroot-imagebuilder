@@ -18,9 +18,6 @@ chroot . /usr/bin/dpkg -i /apt-ntop-stable.deb
 chroot . /usr/bin/apt -y install -f
 chroot . /usr/bin/apt update
 chroot . /usr/bin/apt -y install ntopng
-chroot . /usr/bin/fallocate -l 512M /swapfile
-chroot . /usr/sbin/mkswap /swapfile
-chroot . /usr/bin/chmod 0600 /swapfile
 umount dev
 umount proc
 umount sys

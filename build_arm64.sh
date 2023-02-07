@@ -17,9 +17,6 @@ chroot . /usr/bin/echo "deb https://packages.ntop.org/apt/buster_pi/ arm64/" >> 
 chroot . /usr/bin/echo "deb https://packages.ntop.org/apt/buster_pi/ all/" >> etc/apt/sources.list
 chroot . /usr/bin/apt -o Acquire::AllowInsecureRepositories=true -o Acquire::AllowDowngradeToInsecureRepositories=true update
 chroot . /usr/bin/apt-get -y -o APT::Get::AllowUnauthenticated=true install ntopng
-chroot . /usr/bin/fallocate -l 512M /swapfile
-chroot . /usr/sbin/mkswap /swapfile
-chroot . /usr/bin/chmod 0600 /swapfile
 umount dev
 umount proc
 umount sys

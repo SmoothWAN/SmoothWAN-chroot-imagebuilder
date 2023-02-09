@@ -21,10 +21,10 @@ chroot . /usr/bin/apt -y install ntopng
 killall -KILL ntopng
 killall -KILL redis-server
 sleep 10
-umount dev
-umount proc
-umount sys
+umount dev -l
+umount proc -l
+umount sys -l
 cd ..
-umount mnt
+umount mnt -l
 gzip smoothwan.img
 mv smoothwan.img.gz smoothwan_debuster_x86_64.img.gz

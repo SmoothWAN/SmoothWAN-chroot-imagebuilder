@@ -18,13 +18,14 @@ chroot . /usr/bin/dpkg -i /apt-ntop-stable.deb
 chroot . /usr/bin/apt -y install -f
 chroot . /usr/bin/apt update
 chroot . /usr/bin/apt -y install ntopng
-killall -KILL ntopng
-killall -KILL redis-server
-sleep 10
+sync
 umount dev -l
 umount proc -l
 umount sys -l
 cd ..
 umount mnt -l
+umount smoothwan.img -l
+umount smoothwan.img
+sync
 gzip smoothwan.img
 mv smoothwan.img.gz smoothwan_debuster_x86_64.img.gz

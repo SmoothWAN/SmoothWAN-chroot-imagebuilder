@@ -23,4 +23,4 @@ umount sys
 cd ..
 umount mnt
 gzip smoothwan.img
-mv smoothwan.img.gz smoothwan_debuster_$buildarch.img.gz
+mv smoothwan.img.gz smoothwan_debuster_armv7l.img.gz

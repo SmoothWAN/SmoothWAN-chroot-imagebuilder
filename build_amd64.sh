@@ -18,6 +18,9 @@ chroot . /usr/bin/dpkg -i /apt-ntop-stable.deb
 chroot . /usr/bin/apt -y install -f
 chroot . /usr/bin/apt update
 chroot . /usr/bin/apt -y install ntopng
+killall -KILL ntopng
+killall -KILL redis-server
+sleep 10
 umount dev
 umount proc
 umount sys
